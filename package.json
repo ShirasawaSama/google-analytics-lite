@@ -1,0 +1,52 @@
+{
+  "name": "google-analytics-lite",
+  "version": "0.0.0",
+  "description": "A lightweight google Analytics module.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "npm run lint",
+    "clean": "del-cli dist",
+    "build": "npm run clean && tsc && tsc --outDir dist/esnext -t ESNEXT",
+    "lint": "eslint index.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint"
+  },
+  "files": ["dist"],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShirasawaSama/google-analytics-lite.git"
+  },
+  "keywords": [
+    "google",
+    "analytics",
+    "lite",
+    "lightweight",
+    "typescript",
+    "fetch"
+  ],
+  "author": "Shirasawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShirasawaSama/google-analytics-lite/issues"
+  },
+  "homepage": "https://github.com/ShirasawaSama/google-analytics-lite#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/parser": "^2.15.0",
+    "del-cli": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.0.9",
+    "typescript": "^3.7.4"
+  }
+}
